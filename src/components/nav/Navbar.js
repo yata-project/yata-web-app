@@ -4,21 +4,19 @@ import {
 
 function NavBar() {
     return (
-    <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/lists">My Lists</Link>
-            </li>
-            <li>
-              <Link to="/login">Log In</Link>
-            </li>
-          </ul>
+        <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <Link class="navbar-item has-text-weight-bold" to="/">YATA</Link>
+          </div>
+
+          <div class="navbar-start">
+            <Link to="/lists" class="navbar-item">My Lists</Link>
+          </div>
+
+          <div class="navbar-end">
+            <Link to="/login" class="navbar-item">Log In</Link>
+          </div>
         </nav>
-        </div>
         );
 }
 
