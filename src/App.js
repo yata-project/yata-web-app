@@ -13,21 +13,25 @@ function App() {
     <Router>
       <NavBar />
 
-      <Switch>
-        <Route path="/list/:id" children={<ListDetailsView />} />
-        <Route path="/lists">
-          <AllListsView />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
+      <section class="section">
+        <div class="container">
+          <Switch>
+            <Route path="/list/:id" children={<ListDetailsView />} />
+            <Route path="/lists">
+              <AllListsView />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </section>
     </Router>
   );
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2>This will be the home page</h2>;
 }
 
 export default App;
