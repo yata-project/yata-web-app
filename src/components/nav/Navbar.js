@@ -1,10 +1,6 @@
-import {
-  useAuth
-} from "../../hooks/UseAuth"
-
-import {
-    Link
-} from 'react-router-dom'
+import { useAuth } from "../../hooks/UseAuth"
+import { Link } from 'react-router-dom'
+import * as AuthProvider from '../../AmplifyAuthProvider'
 
 function NavBar() {
     const auth = useAuth();
@@ -24,13 +20,14 @@ function NavBar() {
           <div class="navbar-end">
             <div class="navbar-item">
               {
-                auth.user && <div class="navbar-item">Welcome, {auth.user.name}</div>
+                auth.user && <div class="navbar-item">Welcome, {auth.user.username}</div>
               }
               {
                 auth.user ? (
-                  <button onClick={() => auth.signout()} class="navbar-item">Log Out</button>
+                  // TODO: stylize this so it is not orange
+                  AuthProvider.getSignoutComponent()
                 ) : (
-                  <button onClick={() => auth.signin()} class="navbar-item">Log In</button>
+                  <Link to="/login" class="navbar-item">Log In</Link>
                 )
               }
             </div>

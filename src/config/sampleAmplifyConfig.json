@@ -1,0 +1,7 @@
+{
+    "Auth": {
+        "region": "AWS_REGION",
+        "userPoolId": "COGNITO_USER_POOL_ID",
+        "userPoolWebClientId": "COGNITO_APP_CLIENT_ID"
+    }
+}

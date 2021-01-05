@@ -21,16 +21,13 @@ export function ProvideAuth({children}) {
 
 function useProvideAuth() {
     const [user, setUser] = useState(null);
-    const signin = () => {
-        console.log("Hello")
-        const usr = {
-            name: "bob"
-        };
-        setUser(usr);
-        return usr;
-    }
-    const signout = () => {
+
+    const signout = (userData) => {
         setUser(null);
+    }
+
+    const signin = (userData) => {
+        setUser(userData);
     }
 
     return {

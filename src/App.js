@@ -1,6 +1,7 @@
 import './App.css';
 import AllListsView from './components/AllListsView'
 import ListDetailsView from './components/ListDetailsView'
+import LoginView from './components/LoginView'
 import NavBar from './components/nav/Navbar'
 import { ProvideAuth, useAuth } from "./hooks/UseAuth"
 import {
@@ -22,6 +23,9 @@ function App() {
               <PrivateRoute path="/lists">
                 <AllListsView />
               </PrivateRoute>
+              <Route path="/login">
+                <LoginView />
+              </Route>
               <Route path="/">
                 <Home />
               </Route>
