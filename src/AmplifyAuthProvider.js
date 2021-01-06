@@ -21,7 +21,10 @@ export function getSignoutComponent() {
 export function listenForAuthStateChange(onSignIn, onSignOut) {
   onAuthUIStateChange((nextAuthState, authData) => {
     if (nextAuthState === AuthState.SignedIn) {
-      onSignIn(authData);
+      onSignIn(
+        authData,
+        authData.getSignInUserSession().getIdToken().getJwtToken()
+      );
     } else if (nextAuthState === AuthState.SignedOut) {
       onSignOut(authData);
     }

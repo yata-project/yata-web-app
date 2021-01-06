@@ -1,4 +1,5 @@
 import React, { useContext, createContext, useState } from "react";
+import { setAuthToken } from "../YataClient";
 
 const authContext = createContext();
 
@@ -20,10 +21,13 @@ function useProvideAuth() {
 
   const signout = (userData) => {
     setUser(null);
+    setAuthToken(null);
   };
 
-  const signin = (userData) => {
+  const signin = (userData, token) => {
+    //TODO: save the userData and token to browser storage and refresh token as needed
     setUser(userData);
+    setAuthToken(token);
   };
 
   return {
