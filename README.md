@@ -3,6 +3,7 @@
 ## Configuration
 
 ### Amplify Configuration
+
 We need to provide the amplify configuration in order to integrate the authentication piece. In order to do so, create a JSON file with the following fields:
 ```
 {
@@ -18,6 +19,7 @@ Create the json file in `src/config/amplifyConfig.json`. The values used for the
 TODO: we should be able to specify this file as an input running `npm start`.
 
 ## Running the web app
+
 To start the web app, in directory of this respository, you can run `npm start` which will build and run the app in development mode. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 # Getting Started with Create React App
