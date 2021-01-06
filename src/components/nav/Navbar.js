@@ -6,7 +6,7 @@ function NavBar() {
     const auth = useAuth();
 
     return (
-        <nav class="navbar is-primary" role="navigation" aria-label="main navigation">          
+        <nav class="navbar is-primary" role="navigation" aria-label="main navigation">     
           <div class="navbar-brand">
             <Link class="navbar-item has-text-weight-bold" to="/">YATA</Link>
           </div>
