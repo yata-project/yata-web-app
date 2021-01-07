@@ -1,8 +1,4 @@
-import React, {
-    useContext,
-    createContext,
-    useState
-} from "react";
+import React, { useContext, createContext, useState } from "react";
 
 const authContext = createContext();
 
@@ -11,28 +7,28 @@ const authContext = createContext();
  * This approach is taken from https://usehooks.com/useAuth/
  */
 export const useAuth = () => {
-    return useContext(authContext)
-}
+  return useContext(authContext);
+};
 
-export function ProvideAuth({children}) {
-    const auth = useProvideAuth();
-    return <authContext.Provider value={auth}>{children}</authContext.Provider>;
+export function ProvideAuth({ children }) {
+  const auth = useProvideAuth();
+  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
 
 function useProvideAuth() {
-    const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
-    const signout = (userData) => {
-        setUser(null);
-    }
+  const signout = (userData) => {
+    setUser(null);
+  };
 
-    const signin = (userData) => {
-        setUser(userData);
-    }
+  const signin = (userData) => {
+    setUser(userData);
+  };
 
-    return {
-        user,
-        signin,
-        signout
-    }
+  return {
+    user,
+    signin,
+    signout,
+  };
 }

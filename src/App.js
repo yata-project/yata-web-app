@@ -1,15 +1,15 @@
-import './App.css';
-import AllListsView from './components/AllListsView'
-import ListDetailsView from './components/ListDetailsView'
-import LoginView from './components/LoginView'
-import NavBar from './components/nav/Navbar'
-import { ProvideAuth, useAuth } from "./hooks/UseAuth"
+import "./App.css";
+import AllListsView from "./components/AllListsView";
+import ListDetailsView from "./components/ListDetailsView";
+import LoginView from "./components/LoginView";
+import NavBar from "./components/nav/Navbar";
+import { ProvideAuth, useAuth } from "./hooks/UseAuth";
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
-} from 'react-router-dom'
+} from "react-router-dom";
 
 function App() {
   return (
@@ -59,7 +59,7 @@ function PrivateRoute({ children, ...rest }) {
           <Redirect
             to={{
               pathname: "/login",
-              state: { from: location }
+              state: { from: location },
             }}
           />
         )

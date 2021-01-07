@@ -1,17 +1,16 @@
-import Amplify from 'aws-amplify';
-import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
+import Amplify from "aws-amplify";
+import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import { AuthState, onAuthUIStateChange } from "@aws-amplify/ui-components";
 
-
-var amplifyConfig = require('./config/amplifyConfig.json')
+var amplifyConfig = require("./config/amplifyConfig.json");
 Amplify.configure(amplifyConfig);
 
 export function getSigninComponent() {
-    return <AmplifyAuthenticator />
+  return <AmplifyAuthenticator />;
 }
 
 export function getSignoutComponent() {
-    return <AmplifySignOut buttonText="Sign Out"/>
+  return <AmplifySignOut buttonText="Sign Out" />;
 }
 
 /**
@@ -20,11 +19,11 @@ export function getSignoutComponent() {
  * signs out
  */
 export function listenForAuthStateChange(onSignIn, onSignOut) {
-    onAuthUIStateChange((nextAuthState, authData) => {
-        if (nextAuthState === AuthState.SignedIn) {
-            onSignIn(authData)
-        } else if (nextAuthState === AuthState.SignedOut) {
-            onSignOut(authData)
-        }
-    })
+  onAuthUIStateChange((nextAuthState, authData) => {
+    if (nextAuthState === AuthState.SignedIn) {
+      onSignIn(authData);
+    } else if (nextAuthState === AuthState.SignedOut) {
+      onSignOut(authData);
+    }
+  });
 }
