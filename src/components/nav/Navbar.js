@@ -7,34 +7,34 @@ function NavBar() {
 
   return (
     <nav
-      class="navbar is-primary"
+      className="navbar is-primary"
       role="navigation"
       aria-label="main navigation"
     >
-      <div class="navbar-brand">
-        <Link class="navbar-item has-text-weight-bold" to="/">
+      <div className="navbar-brand">
+        <Link className="navbar-item has-text-weight-bold" to="/">
           YATA
         </Link>
       </div>
 
       {auth.user && (
-        <div class="navbar-start">
-          <Link to="/lists" class="navbar-item">
+        <div className="navbar-start">
+          <Link to="/lists" className="navbar-item">
             My Lists
           </Link>
         </div>
       )}
 
-      <div class="navbar-end">
-        <div class="navbar-item">
+      <div className="navbar-end">
+        <div className="navbar-item">
           {auth.user && (
-            <div class="navbar-item">Welcome, {auth.user.username}</div>
+            <div className="navbar-item">Welcome, {auth.user.username}</div>
           )}
           {auth.user ? (
             // TODO: stylize this so it is not orange
             AuthProvider.getSignoutComponent()
           ) : (
-            <Link to="/login" class="navbar-item">
+            <Link to="/login" className="navbar-item">
               Log In
             </Link>
           )}

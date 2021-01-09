@@ -16,8 +16,8 @@ function App() {
     <ProvideAuth>
       <Router>
         <NavBar />
-        <section class="section">
-          <div class="container">
+        <section className="section">
+          <div className="container">
             <Switch>
               <PrivateRoute path="/list/:id" children={<ListDetailsView />} />
               <PrivateRoute path="/lists">
