@@ -76,7 +76,11 @@ function ListDetailsView() {
     );
   }
 
-  return <div class="content">{content}</div>;
+  return (
+    <section class="section">
+      <div class="container">{content}</div>
+    </section>
+  );
 }
 
 function renderError(error) {

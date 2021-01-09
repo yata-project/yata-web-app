@@ -1,3 +1,4 @@
+import CreateListForm from "./CreateListForm";
 import { GetLists } from "../YataClient";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -41,18 +42,45 @@ function AllListsView() {
     content = <div>Loading...</div>;
   } else {
     const allLists = state.lists.map((list) => (
-      <div key={list.ListID} class="tile is-parent is-4">
-        <article class="tile is-child has-background-primary box">
-          <Link class="title" to={"/list/" + list.ListID}>
+      <div key={list.ListID} className="tile is-parent is-4">
+        <article className="tile is-child has-background-primary box">
+          <Link className="title" to={"/list/" + list.ListID}>
             {list.Title}
           </Link>
         </article>
       </div>
     ));
-    content = <div class="tile is-ancestor is-flex-wrap-wrap">{allLists}</div>;
+
+    const newListHandler = onNewList(state, setState);
+
+    content = (
+      <div>
+        <section className="section">
+          <div className="container">
+            <CreateListForm onSuccess={newListHandler} />
+          </div>
+        </section>
+        <section className="section">
+          <div className="container">
+            <div className="tile is-ancestor is-flex-wrap-wrap">{allLists}</div>
+          </div>
+        </section>
+      </div>
+    );
   }
 
   return <div>{content}</div>;
+}
+
+function onNewList(state, setState) {
+  return (id, title) => {
+    setState((state) => {
+      return {
+        ...state,
+        lists: [{ ListID: id, Title: title }, ...state.lists],
+      };
+    });
+  };
 }
 
 export default AllListsView;

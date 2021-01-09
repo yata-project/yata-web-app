@@ -16,22 +16,18 @@ function App() {
     <ProvideAuth>
       <Router>
         <NavBar />
-        <section className="section">
-          <div className="container">
-            <Switch>
-              <PrivateRoute path="/list/:id" children={<ListDetailsView />} />
-              <PrivateRoute path="/lists">
-                <AllListsView />
-              </PrivateRoute>
-              <Route path="/login">
-                <LoginView />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-          </div>
-        </section>
+        <Switch>
+          <PrivateRoute path="/list/:id" children={<ListDetailsView />} />
+          <PrivateRoute path="/lists">
+            <AllListsView />
+          </PrivateRoute>
+          <Route path="/login">
+            <LoginView />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </Router>
     </ProvideAuth>
   );

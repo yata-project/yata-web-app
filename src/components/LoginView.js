@@ -9,7 +9,11 @@ function LoginView() {
     AuthProvider.listenForAuthStateChange(auth.signin, auth.signout);
   }, [auth]);
 
-  return <div className="container">{AuthProvider.getSigninComponent()}</div>;
+  return (
+    <section class="section">
+      <div class="container">{AuthProvider.getSigninComponent()}</div>
+    </section>
+  );
 }
 
 export default LoginView;

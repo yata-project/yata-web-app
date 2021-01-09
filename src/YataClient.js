@@ -1,3 +1,5 @@
+import { v4 as uuid } from "uuid";
+
 let jwt = null;
 export function setAuthToken(token) {
   jwt = token;
@@ -7,20 +9,27 @@ export async function GetItems(listID) {
   return call("/lists/" + listID + "/items", "GET");
 }
 
+export async function CreateList(title) {
+  const request = { ListID: uuid(), Title: title };
+  console.log("Creating new list: ", request);
+  return call("/lists", "PUT", request);
+}
+
 export async function GetLists() {
-  return call("/lists", "GET");
+  return call("/lists", "GET", null);
 }
 
 export async function DescribeList(listID) {
-  return call("/lists/" + listID + "/", "GET");
+  return call("/lists/" + listID + "/", "GET", null);
 }
 
-async function call(endpoint, method) {
+async function call(endpoint, method, data) {
   return fetch(endpoint, {
     method: method,
     headers: {
       Authorization: getAuthHeader(),
     },
+    body: data === null ? null : JSON.stringify(data),
   }).then((response) => {
     if (response.ok) {
       return response.json();
