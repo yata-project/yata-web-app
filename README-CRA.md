@@ -7,10 +7,6 @@ This project was bootstrapped with
 
 In the project directory, you can run:
 
-### `npm run format`
-
-Formats the project with `prettier`.
-
 ### `npm start`
 
 Runs the app in the development mode.\
