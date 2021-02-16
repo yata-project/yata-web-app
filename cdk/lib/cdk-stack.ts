@@ -9,7 +9,6 @@ export class CdkStack extends cdk.Stack {
 
     // S3:
     const bucket = new s3.Bucket(this, "Bucket", {
-      // blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
 

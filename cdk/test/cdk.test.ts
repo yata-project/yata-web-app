@@ -7,7 +7,7 @@ import {
   matchTemplate,
 } from "@aws-cdk/assert";
 
-/*
+/* TODO: Implement proper unit tests.
 test("Empty Stack", () => {
   const app = new cdk.App();
   // WHEN

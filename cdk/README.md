@@ -11,7 +11,7 @@ This CDK project deploys the yata-web-app to S3 and CloudFormation.
 
 ## Development
 
-1. Make changes to `.ts` files; `.js` files are generated.
+1. Make changes to `.ts` files; `.js` files are generated automatically during build.
 1. Run `npm run build` to compile.
 1. When adding new `@aws-cdk` dependencies makes sure they are the same exact
    version as the others or else you'll have problems.
