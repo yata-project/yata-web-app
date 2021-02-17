@@ -18,7 +18,7 @@ fields:
 }
 ```
 
-Create the json file in `src/config/amplifyConfig.json`. The values used for the
+Update the json file in `src/config/amplifyConfig.json`. The values used for the
 config will be taken from the user pool we want to use for authentication.
 
 TODO: we should be able to specify this file as an input running `npm start`.
